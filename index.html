@@ -29,9 +29,9 @@
 
     document.getElementById("submitForm").addEventListener("click", function (e) {
           e.preventDefault();
-          var startVal = document.getElementById("startValue").value,
-              endVal = document.getElementById("endValue").value;
-          
+          var startVal = parseInt(document.getElementById("startValue").value),
+              endVal = parseInt(document.getElementById("endValue").value);
+
           if( startVal == 0 || endVal == 0 || isNaN(startVal) || isNaN(endVal)){
             alert('Please complete both fields with numbers');
           } else if(startVal >= endVal){

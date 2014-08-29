@@ -22,7 +22,6 @@ startupApplication.numbersModule = (function(){
 				for(var condition = 0; condition < replacements.length; condition++){
 					if(number % replacements[condition].numberModule === 0){
 						displayValue = replacements[condition].textReplace + ' ('+number+')';
-						break;
 					}
 				}
 				return displayValue;
