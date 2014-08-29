@@ -18,6 +18,7 @@
             </div>
             <div class="row">
                 <button type="submit" id="submitForm">Generate!</button>
+                <button type="reset" id="resetResults" class="reset">Reset and Remove</button>
             </div>
         </form>
         <div id="results">
@@ -43,6 +44,10 @@
             ]);
           }
 
+    });
+
+    document.getElementById("resetResults").addEventListener("click", function () {
+        document.getElementById('results').innerHTML = '';
     });
 </script>
 </body>
