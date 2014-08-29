@@ -7,7 +7,7 @@ startupApplication.numbersModule = (function(){
 	var numberIterations = function(start,end,replace){
 
 		var output = function(result){
-			document.write('<h1>Results</h1><ul>' + result + '</ul>');
+			document.write('<div class="wrapper"><h1>Results</h1><ul>' + result + '</ul></div>');
 		}
 
 		var iterationResult = '',

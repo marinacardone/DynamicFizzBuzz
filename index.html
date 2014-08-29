@@ -2,10 +2,28 @@
 <head>
 	<title>Dynamic FizzBazzEtc</title>
 	<script type="text/javascript" src="script.js"></script>
+    <style type="text/css">
+        body{
+            background:#F2EEEA;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 1em;
+            color: #5F5E5D;
+        }
+
+        .wrapper{
+            background: #fff;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin: 30px auto;
+            max-width: 640px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
+    
 <script type="text/javascript">
-    startupApplication.numbersModule.createIteration(63,120,[
+    startupApplication.numbersModule.createIteration(63,80,[
         {numberModule: 3, textReplace: 'fizz'}, 
         {numberModule: 5, textReplace: 'buzz'}, 
         {numberModule: 7, textReplace: 'whoo'}
