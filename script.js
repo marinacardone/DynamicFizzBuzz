@@ -41,7 +41,12 @@ startupApplication.numbersModule = (function(){
 	return {
 		
 		createIteration: function(start,end,replace){
-			return numberIterations(start,end,replace);
+			if(start >= end){
+				alert('Please check that end is greater than start')
+			} else {
+				return numberIterations(start,end,replace);
+			}
+			
 		}
 	}
 
