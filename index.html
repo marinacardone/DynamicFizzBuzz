@@ -2,32 +2,48 @@
 <head>
 	<title>Dynamic FizzBazzEtc</title>
 	<script type="text/javascript" src="script.js"></script>
-    <style type="text/css">
-        body{
-            background:#F2EEEA;
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 1em;
-            color: #5F5E5D;
-        }
-
-        .wrapper{
-            background: #fff;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin: 30px auto;
-            max-width: 640px;
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="wrapper" id="appContent">
+        <h1>Create your Iteration!</h1>
+        <form id="iterateForm">
+            <div class="row">
+                <label for="startValue">Start Value:</label>
+                <input type="text" id="startValue" placeholder="Your start value...">
+            </div>
+            <div class="row">
+                <label for="endValue">End Value:</label>
+                <input type="text" id="endValue" placeholder="Your end value...">
+            </div>
+            <div class="row">
+                <button type="submit" id="submitForm">Generate!</button>
+            </div>
+        </form>
+        <div id="results">
+        </div>
+    </div>
     
 <script type="text/javascript">
-    startupApplication.numbersModule.createIteration(21,80,[
-        {numberModule: 3, textReplace: 'fizz'}, 
-        {numberModule: 5, textReplace: 'buzz'}, 
-        {numberModule: 7, textReplace: 'whoo'}
-    ]);
+
+    document.getElementById("submitForm").addEventListener("click", function (e) {
+          e.preventDefault();
+          var startVal = document.getElementById("startValue").value,
+              endVal = document.getElementById("endValue").value;
+          
+          if( startVal == 0 || endVal == 0 || isNaN(startVal) || isNaN(endVal)){
+            alert('Please complete both fields with numbers');
+          } else if(startVal >= endVal){
+            alert('Please check that end value is greater than start value');
+          } else {
+            startupApplication.numbersModule.createIteration(startVal,endVal,[
+            {numberModule: 3, textReplace: 'fizz'}, 
+            {numberModule: 5, textReplace: 'buzz'}, 
+            {numberModule: 7, textReplace: 'whoo'}
+            ]);
+          }
+
+    });
 </script>
 </body>
 </html>

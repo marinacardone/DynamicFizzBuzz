@@ -7,7 +7,8 @@ startupApplication.numbersModule = (function(){
 	var numberIterations = function(start,end,replace){
 
 		var output = function(result){
-			document.write('<div class="wrapper"><h1>Results</h1><ul>' + result + '</ul></div>');
+			var resultsContainer = document.getElementById('results');
+			resultsContainer.innerHTML = '<div class="wrapper"><h1>Results</h1><ul>' + result + '</ul></div>';
 		}
 
 		var iterationResult = '',
@@ -41,11 +42,8 @@ startupApplication.numbersModule = (function(){
 	return {
 		
 		createIteration: function(start,end,replace){
-			if(start >= end){
-				alert('Please check that end is greater than start')
-			} else {
-				return numberIterations(start,end,replace);
-			}
+			
+			return numberIterations(start,end,replace);
 			
 		}
 	}
