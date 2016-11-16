@@ -45,6 +45,7 @@ button{
     cursor: pointer;
 }
 .reset{
+    margin-right: 10px;
     background: #B4B2AE;
     border-color:#aaa;
 }
