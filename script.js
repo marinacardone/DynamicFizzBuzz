@@ -1,8 +1,8 @@
 'use strict';
 
-var startupApplication = startupApplication || {};
+var dynamicfizzApplication = dynamicfizzApplication || {};
 
-startupApplication.numbersModule = (function(){
+dynamicfizzApplication.numbersModule = (function(){
 
 	var numberIterations = function(start,end,replace){
 
@@ -20,7 +20,11 @@ startupApplication.numbersModule = (function(){
 				var displayValue = number;
 				// check the number against each replacement
 				for(var condition = 0; condition < replacements.length; condition++){
-					if(number % replacements[condition].numberModule === 0){
+					// both conditions
+					if(number % (replacements[condition].numberToReplace * replacements[condition++].numberToReplace) === 0){
+						displayValue = replacements[0].textReplace + replacements[condition].textReplace + ' ('+number+')';
+					// one condition
+					} else if(number % replacements[condition].numberToReplace === 0){
 						displayValue = replacements[condition].textReplace + ' ('+number+')';
 					}
 				}
@@ -40,7 +44,7 @@ startupApplication.numbersModule = (function(){
 
 	return {
 		
-		createIteration: function(start,end,replace){
+		startIteration: function(start,end,replace){
 			
 			return numberIterations(start,end,replace);
 			
@@ -48,6 +52,3 @@ startupApplication.numbersModule = (function(){
 	}
 
 })();
-
-
-// TO DO: Check if accomplish more than one condition

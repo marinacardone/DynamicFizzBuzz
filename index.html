@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Dynamic FizzBazzEtc</title>
+	<title>Dynamic FizzBuzz</title>
 	<script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -10,11 +10,11 @@
         <form id="iterateForm">
             <div class="row">
                 <label for="startValue">Start Value:</label>
-                <input type="text" id="startValue" placeholder="Your start value...">
+                <input type="number" id="startValue" placeholder="Your start value...">
             </div>
             <div class="row">
                 <label for="endValue">End Value:</label>
-                <input type="text" id="endValue" placeholder="Your end value...">
+                <input type="number" id="endValue" placeholder="Your end value...">
             </div>
             <div class="row">
                 <button type="submit" id="submitForm">Generate!</button>
@@ -37,10 +37,9 @@
           } else if(startVal >= endVal){
             alert('Please check that end value is greater than start value');
           } else {
-            startupApplication.numbersModule.createIteration(startVal,endVal,[
-            {numberModule: 3, textReplace: 'fizz'}, 
-            {numberModule: 5, textReplace: 'buzz'}, 
-            {numberModule: 7, textReplace: 'whoo'}
+            dynamicfizzApplication.numbersModule.startIteration(startVal,endVal,[
+            {numberToReplace: 3, textReplace: 'fizz'}, 
+            {numberToReplace: 5, textReplace: 'buzz'}
             ]);
           }
 
